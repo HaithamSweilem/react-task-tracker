@@ -1,26 +1,26 @@
 import PropTypes from 'prop-types'
 import Button from "./Button";
 
-const Header = (props) => {
-
-  const onClick = () => {
-    console.info('button clicked')
-  }
+const Header = ({ title, showAddForm, onShowAddFormClick }) => {
 
   return (
     <header className='header'>
-      <h1>{props.title}</h1>
-      <Button color={'green'} text={'Add'} onClick={onClick}/>
+      <h1>{title}</h1>
+      <Button
+        color={showAddForm ? 'red' : 'green'}
+        text={showAddForm ? 'Close' : 'Add'}
+        onClick={onShowAddFormClick}/>
     </header>
   )
 }
-//
-// Header.defaultProps = {
-//   title: 'Task Tracker Default'
-// }
+
+Header.defaultProps = {
+  showAddForm: false
+}
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  showAddForm: PropTypes.bool
 }
 
 // CSS in JS

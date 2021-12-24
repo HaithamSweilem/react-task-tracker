@@ -1,8 +1,10 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks"
 import {useState} from "react"
+import AddTaskForm from "./components/AddTaskForm";
 
 function App() {
+  const [showAddForm, setShowAddForm] = useState(false)
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -27,6 +29,10 @@ function App() {
     },
   ])
 
+  const onShowAddFormClick = () => {
+    setShowAddForm(!showAddForm)
+  }
+
   const onDeleteTask = (taskId) => {
     setTasks(tasks.filter((task) => task.id !== taskId))
   }
@@ -37,10 +43,21 @@ function App() {
     );
   }
 
+  const onAddTask = (task) => {
+    const id = tasks.length + 1
+    setTasks([
+      ...tasks,
+      {id: id, ...task}
+    ])
+  }
+
   return (
     <div className="container">
-      <Header title={'Task Tracker'} />
-      <Tasks tasks={tasks} onDeleteTask={onDeleteTask} onSetReminderForTask={onSetReminderForTask} />
+      <Header title={'Task Tracker'} showAddForm={showAddForm} onShowAddFormClick={onShowAddFormClick} />
+
+      {showAddForm && <AddTaskForm onAddTask={onAddTask} />}
+
+      <Tasks tasks={tasks} onDeleteTask={onDeleteTask} onSetReminderForTask={onSetReminderForTask}/>
     </div>
   );
 
