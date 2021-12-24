@@ -45,10 +45,8 @@ function App() {
 
   const onAddTask = (task) => {
     const id = tasks.length + 1
-    setTasks([
-      ...tasks,
-      {id: id, ...task}
-    ])
+    const newTask = {id, ...task}
+    setTasks([...tasks, newTask])
   }
 
   return (

@@ -50,6 +50,7 @@ const AddTaskForm = ({ onAddTask }) => {
         <input type='checkbox'
                className='form-control'
                checked={reminder}
+               value={reminder}
                onChange={(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
