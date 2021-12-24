@@ -3,14 +3,23 @@ import {PropTypes} from "prop-types";
 
 const Tasks = ({ tasks, onDeleteTask, onSetReminderForTask }) => {
 
+  const renderElement = () => {
+
+    if (tasks.length === 0) {
+
+      return <>No Tasks To Show</>
+
+    } else {
+    
+      return tasks.map((task) => {
+        return <Task key={task.id} task={task} onDelete={onDeleteTask} onSetReminder={onSetReminderForTask}/>
+      })
+
+    }
+  }
+
   return (
-    <>
-      {(
-        tasks.map((task) => {
-          return <Task key={task.id} task={task} onDelete={onDeleteTask} onSetReminder={onSetReminderForTask}/>
-        })
-      )}
-    </>
+    <>{renderElement()}</>
   )
 
 }
