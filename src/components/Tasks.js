@@ -1,7 +1,7 @@
 import Task from './Task'
 import {PropTypes} from "prop-types";
 
-const Tasks = ({ tasks, onDeleteTask, onSetReminderForTask }) => {
+const Tasks = ({ tasks, onDeleteTask, onToggleReminderForTask }) => {
 
   const renderElement = () => {
 
@@ -10,9 +10,9 @@ const Tasks = ({ tasks, onDeleteTask, onSetReminderForTask }) => {
       return <>No Tasks To Show</>
 
     } else {
-    
+
       return tasks.map((task) => {
-        return <Task key={task.id} task={task} onDelete={onDeleteTask} onSetReminder={onSetReminderForTask}/>
+        return <Task key={task.id} task={task} onDelete={onDeleteTask} onToggleReminder={onToggleReminderForTask}/>
       })
 
     }
@@ -27,7 +27,7 @@ const Tasks = ({ tasks, onDeleteTask, onSetReminderForTask }) => {
 Tasks.propTypes = {
   tasks: PropTypes.array,
   onDeleteTask: PropTypes.func,
-  onSetReminderForTask: PropTypes.func
+  onToggleReminderForTask: PropTypes.func
 }
 
 export default Tasks
