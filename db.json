@@ -1,67 +1,19 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Buy milk 1",
-      "day": "Dec 23 at 13:00",
-      "done": true,
-      "reminder": false
-    },
-    {
-      "id": 2,
-      "text": "Buy mustard",
-      "day": "Dec 23 at 13:00",
-      "done": true,
-      "reminder": false
-    },
-    {
-      "id": 3,
-      "text": "Buy ketchup",
-      "day": "Dec 23 at 13:00",
-      "done": false,
-      "reminder": false
-    },
-    {
-      "text": "text 123",
-      "day": "Tuesday 3:00 PM",
-      "reminder": true,
-      "done": false,
-      "id": 4
-    },
-    {
-      "text": "text 123",
-      "day": "Tuesday 3:00 PM",
-      "reminder": true,
-      "done": false,
-      "id": 5
-    },
-    {
-      "text": "text 123",
-      "day": "Tuesday 3:00 PM",
-      "reminder": true,
-      "done": false,
-      "id": 6
-    },
-    {
       "id": 7,
       "text": "text 777",
       "day": "Friday 7:00 AM",
-      "reminder": false,
+      "reminder": true,
       "done": false
     },
     {
       "text": "Hello world!",
       "day": "Wednesday at 7:77 AM",
-      "reminder": false,
+      "reminder": true,
       "done": false,
       "id": 8,
       "field": false
-    },
-    {
-      "text": "New Day",
-      "day": "Today at 6:00 PM",
-      "reminder": true,
-      "id": 9
     },
     {
       "text": "aabb",
@@ -72,13 +24,13 @@
     {
       "text": "go",
       "day": "fa",
-      "reminder": false,
+      "reminder": true,
       "id": 11
     },
     {
-      "text": "hos",
-      "day": "gum",
-      "reminder": false,
+      "text": "13th task",
+      "day": "13 every day",
+      "reminder": true,
       "id": 12
     }
   ]
