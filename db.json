@@ -1,27 +1,6 @@
 {
   "tasks": [
     {
-      "id": 7,
-      "text": "text 777",
-      "day": "Friday 7:00 AM",
-      "reminder": true,
-      "done": false
-    },
-    {
-      "text": "Hello world!",
-      "day": "Wednesday at 7:77 AM",
-      "reminder": true,
-      "done": false,
-      "id": 8,
-      "field": false
-    },
-    {
-      "text": "aabb",
-      "day": "bb",
-      "reminder": true,
-      "id": 10
-    },
-    {
       "text": "go",
       "day": "fa",
       "reminder": true,
@@ -32,6 +11,12 @@
       "day": "13 every day",
       "reminder": true,
       "id": 12
+    },
+    {
+      "text": "zzz",
+      "day": "",
+      "reminder": true,
+      "id": 13
     }
   ]
 }

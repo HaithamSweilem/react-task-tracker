@@ -4,6 +4,9 @@ import { useEffect, useState } from "react"
 import AddTaskForm from "./components/AddTaskForm";
 // import Button from "./components/Button";
 import ApiTasks from "./api/ApiTasks";
+import { Routes, BrowserRouter as Router, Route } from "react-router-dom";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
 function App() {
   const [showAddForm, setShowAddForm] = useState(false)
@@ -123,17 +126,26 @@ function App() {
 
   }
 */
-
   return (
-    <div className="container">
-      <Header title={'Task Tracker'} showAddForm={showAddForm} onShowAddFormClick={onShowAddFormClick} />
+    <Router>
+      <div className="container">
+        <Header title={'Task Tracker'} showAddForm={showAddForm} onShowAddFormClick={onShowAddFormClick} />
+        <Routes>
+          <Route path="/" element={<>
+              {showAddForm && <AddTaskForm onAddTask={onAddTask} />}
 
-      {showAddForm && <AddTaskForm onAddTask={onAddTask} />}
+              <Tasks tasks={tasks} onDeleteTask={onDeleteTask} onToggleReminderForTask={onToggleReminderForTask}/>
 
-      <Tasks tasks={tasks} onDeleteTask={onDeleteTask} onToggleReminderForTask={onToggleReminderForTask}/>
+              {/*<Button color='orange' text='Test Axios' onClick={testAxios} />*/}
+          </>}/>
 
-      {/*<Button color='orange' text='Test Axios' onClick={testAxios} />*/}
-    </div>
+          <Route path='/about' element={<About />} />
+        </Routes>
+
+        <Footer />
+
+      </div>
+    </Router>
   );
 
 }
